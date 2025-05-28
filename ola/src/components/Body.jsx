@@ -1,11 +1,71 @@
-import React from 'react'
+import { useState } from 'react'
 import './Body.css'
 
 function Body() {
+  const [cont, setCont] = useState(0)
+  const [inputValor, setInputValor] = useState('')
+  const [inputN1, setInputN1] = useState('')
+  const [inputN2, setInputN2] = useState('')
+
+
+  function aumentar() {
+    setCont(cont + 1)
+  }
+
+  function diminuir() {
+    if (cont > 0) {
+      setCont(cont - 1)
+    }
+  }
+
+  function alterar() {
+    setCont(Number(inputValor))
+  }
+
+   function somar(){
+    setCont(Number(inputN1) + Number(inputN2))
+   }
+
+   function subs(){
+    setCont(Number(inputN1) - Number(inputN2))
+   }
+
+   function mult(){
+    setCont(Number(inputN1) * Number(inputN2))
+   }
+
   return (
     <div className='Body'>
-        <h2 className='titulo2'>Dinos que não tinham pais 🥲</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum, reiciendis distinctio vel provident autem incidunt fugit labore voluptatum, rerum commodi in quae consequatur perferendis quasi dolorum quidem, numquam aliquam!</p>
+      <h2 className='titulo2'>Dinos que não tinham pais 🥲</h2>
+      <div className='cont'>
+        <button onClick={diminuir}>-</button>
+        <p> {cont}</p>
+        <button onClick={aumentar}>+</button>
+      </div>
+
+      <div className='form'>
+        <input type="number"
+          value={inputValor}
+          onChange={(e) => setInputValor(e.target.value)}
+        />
+        <button onClick={alterar}>Alterar</button>
+      </div>
+
+      <div className='calculadera'>
+        <input type="text" 
+        value={inputN1}
+        onChange={(e) => setInputN1(e.target.value)}
+        />
+       
+        <button onClick={somar}>+</button>
+        <button onClick={subs}>-</button>
+        <button onClick={mult}>*</button>
+        <input type="text" 
+        value={inputN2}
+        onChange={(e) => setInputN2(e.target.value)}
+        /> 
+      </div>
+
     </div>
   )
 }
