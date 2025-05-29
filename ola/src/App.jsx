@@ -14,7 +14,7 @@ function App() {
   return (
     <div className='App'>
     <Header />
-    <Body />
+    <Body characters={characters}/>
 
     </div>
   )

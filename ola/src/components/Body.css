@@ -12,7 +12,7 @@
     transition: transform 0.3s ease;
     background-color: #f0f0f0;
     text-align: center;
-    max-height: 300px;  
+    
 }
 
 .card:hover{
@@ -38,4 +38,11 @@
 .card h2,
 .card p{
     color: #555;
+}
+
+.grid{
+    width: 92.5vw;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
