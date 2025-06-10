@@ -1,8 +1,8 @@
 import React from 'react'
 import './Header.css'
 
-function Header() {
-  const [searchTerm, setSearchTerm] = React.useState('')
+function Header({searchTerm, setSearchTerm}) {
+ // const [searchTerm, setSearchTerm] = useState('')
 
   return (
     <div className='Header'>
